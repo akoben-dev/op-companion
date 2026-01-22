@@ -17,6 +17,8 @@ import 'package:one_piece_companion/features/encyclopedia/presentation/locations
 import 'package:one_piece_companion/features/encyclopedia/presentation/location_detail_screen.dart';
 import 'package:one_piece_companion/features/settings/presentation/settings_screen.dart';
 import 'package:one_piece_companion/features/search/presentation/search_screen.dart';
+import 'package:one_piece_companion/features/arcs/presentation/arc_detail_screen.dart';
+
 
 
 
@@ -68,6 +70,14 @@ final GoRouter appRouter = GoRouter(
       name: 'root',
       builder: (context, state) => const RootShell(),
       routes: [
+        GoRoute(
+          path: 'arc/:id',
+          name: 'arcDetail',
+          builder: (context, state) {
+            final id = state.pathParameters['id']!;
+            return ArcDetailScreen(arcId: id);
+          },
+        ),
         GoRoute(
           path: 'search',
           name: 'search',

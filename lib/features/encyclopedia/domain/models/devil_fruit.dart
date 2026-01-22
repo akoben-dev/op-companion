@@ -8,6 +8,9 @@ class DevilFruit {
   final String? user;
   final String firstAppearanceArc;
 
+  // NEW
+  final String? imageUrl; // network url to your CDN (optional)
+
   const DevilFruit({
     required this.id,
     required this.name,
@@ -16,5 +19,6 @@ class DevilFruit {
     required this.description,
     this.user,
     required this.firstAppearanceArc,
+    this.imageUrl,
   });
 }

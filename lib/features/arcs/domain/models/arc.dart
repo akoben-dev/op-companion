@@ -7,6 +7,9 @@ class Arc {
   final int endChapter;
   final String summary;
 
+  // NEW
+  final String? imageUrl; // optional CDN image
+
   const Arc({
     required this.id,
     required this.name,
@@ -14,5 +17,6 @@ class Arc {
     required this.startChapter,
     required this.endChapter,
     required this.summary,
+    this.imageUrl,
   });
 }

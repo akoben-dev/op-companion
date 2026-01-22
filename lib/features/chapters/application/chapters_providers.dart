@@ -23,3 +23,8 @@ final chapterByIdProvider =
   final repo = ref.watch(chaptersRepositoryProvider);
   return repo.getChapterById(chapterId);
 });
+
+// NEW: Alias for consistency (uses existing chaptersForArcProvider)
+final chaptersByArcProvider = Provider.family<List<Chapter>, String>((ref, arcId) {
+  return ref.watch(chaptersForArcProvider(arcId));
+});

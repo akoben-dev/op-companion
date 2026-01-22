@@ -11,3 +11,9 @@ final arcsProvider = Provider<List<Arc>>((ref) {
   final repo = ref.watch(arcsRepositoryProvider);
   return repo.getArcs();
 });
+
+// NEW: family provider to get arc by ID
+final arcByIdProvider = Provider.family<Arc?, String>((ref, id) {
+  final repo = ref.watch(arcsRepositoryProvider);
+  return repo.getById(id);
+});

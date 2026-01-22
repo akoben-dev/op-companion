@@ -10,6 +10,12 @@ final readChaptersProvider =
   (ref) => ReadChaptersNotifier(ref)..loadFromStorage(),
 );
 
+/// Helper provider to check if a specific chapter is read
+final isChapterReadProvider = Provider.family<bool, String>((ref, chapterId) {
+  final readChapters = ref.watch(readChaptersProvider);
+  return readChapters.contains(chapterId);
+});
+
 const _readChaptersKey = 'read_chapters_ids';
 
 class ReadChaptersNotifier extends StateNotifier<Set<String>> {
