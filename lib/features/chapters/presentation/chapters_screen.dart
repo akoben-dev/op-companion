@@ -5,11 +5,6 @@ import 'package:one_piece_companion/features/chapters/application/chapters_provi
 import 'package:one_piece_companion/features/chapters/application/read_status_providers.dart';
 
 
-
-class ReadChaptersNotifierTest extends StateNotifier<Set<String>> {
-  ReadChaptersNotifierTest() : super(<String>{});
-}
-
 class ChaptersScreen extends ConsumerWidget {
   const ChaptersScreen({super.key, required this.arcId, required this.arcName});
 

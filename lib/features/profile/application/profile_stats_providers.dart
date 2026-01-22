@@ -16,7 +16,7 @@ class ProfileStats {
 }
 
 final profileStatsProvider = Provider<ProfileStats>((ref) {
-  final allChapters = ref.watch(allChaptersProvider); // adjust to your list
+  final allChapters = ref.watch(allChaptersProvider);
   final readChapters = ref.watch(readChaptersProvider);
 
   final total = allChapters.length;

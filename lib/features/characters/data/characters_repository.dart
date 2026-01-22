@@ -1,11 +1,12 @@
+// lib/features/characters/data/characters_repository.dart
 import '../domain/models/character.dart';
 
 class CharactersRepository {
   const CharactersRepository();
 
-  // Expanded sample: Straw Hats + a few major others
   List<Character> getAllCharacters() {
     return const [
+      // Straw Hat Pirates
       Character(
         id: 'luffy',
         name: 'Monkey D. Luffy',
@@ -21,7 +22,6 @@ class CharactersRepository {
         role: 'Swordsman',
         affiliation: 'Straw Hat Pirates',
         bounty: 1111000000,
-        devilFruit: null,
         firstAppearanceArc: 'Romance Dawn',
       ),
       Character(
@@ -30,7 +30,6 @@ class CharactersRepository {
         role: 'Navigator',
         affiliation: 'Straw Hat Pirates',
         bounty: 366000000,
-        devilFruit: null,
         firstAppearanceArc: 'Orange Town',
       ),
       Character(
@@ -39,7 +38,6 @@ class CharactersRepository {
         role: 'Sniper',
         affiliation: 'Straw Hat Pirates',
         bounty: 500000000,
-        devilFruit: null,
         firstAppearanceArc: 'Syrup Village',
       ),
       Character(
@@ -48,7 +46,6 @@ class CharactersRepository {
         role: 'Cook',
         affiliation: 'Straw Hat Pirates',
         bounty: 1032000000,
-        devilFruit: null,
         firstAppearanceArc: 'Baratie',
       ),
       Character(
@@ -67,7 +64,7 @@ class CharactersRepository {
         affiliation: 'Straw Hat Pirates',
         bounty: 930000000,
         devilFruit: 'Hana Hana no Mi',
-        firstAppearanceArc: 'Whiskey Peak / Alabasta',
+        firstAppearanceArc: 'Alabasta',
       ),
       Character(
         id: 'franky',
@@ -75,7 +72,6 @@ class CharactersRepository {
         role: 'Shipwright',
         affiliation: 'Straw Hat Pirates',
         bounty: 394000000,
-        devilFruit: null,
         firstAppearanceArc: 'Water 7',
       ),
       Character(
@@ -93,29 +89,168 @@ class CharactersRepository {
         role: 'Helmsman',
         affiliation: 'Straw Hat Pirates',
         bounty: 1100000000,
-        devilFruit: null,
-        firstAppearanceArc: 'Arlong Park / Impel Down',
+        firstAppearanceArc: 'Impel Down',
       ),
 
-      // A few major non-Straw Hat examples
+      // Yonko & Emperors
       Character(
         id: 'shanks',
         name: 'Shanks',
-        role: 'Captain',
+        role: 'Emperor / Captain',
         affiliation: 'Red-Haired Pirates',
         bounty: 4048900000,
-        devilFruit: null,
         firstAppearanceArc: 'Romance Dawn',
       ),
       Character(
         id: 'whitebeard',
         name: 'Edward Newgate (Whitebeard)',
-        role: 'Captain',
+        role: 'Emperor / Captain',
         affiliation: 'Whitebeard Pirates',
         bounty: 5046000000,
         devilFruit: 'Gura Gura no Mi',
         firstAppearanceArc: 'Jaya',
       ),
+      Character(
+        id: 'kaido',
+        name: 'Kaido',
+        role: 'Emperor / Governor-General',
+        affiliation: 'Beasts Pirates',
+        bounty: 4611100000,
+        devilFruit: 'Uo Uo no Mi, Model: Seiryu',
+        firstAppearanceArc: 'Zou',
+      ),
+      Character(
+        id: 'bigmom',
+        name: 'Charlotte Linlin (Big Mom)',
+        role: 'Emperor / Captain',
+        affiliation: 'Big Mom Pirates',
+        bounty: 4388000000,
+        devilFruit: 'Soru Soru no Mi',
+        firstAppearanceArc: 'Fishman Island',
+      ),
+      Character(
+        id: 'blackbeard',
+        name: 'Marshall D. Teach (Blackbeard)',
+        role: 'Emperor / Admiral',
+        affiliation: 'Blackbeard Pirates',
+        bounty: 3996000000,
+        devilFruit: 'Yami Yami no Mi / Gura Gura no Mi',
+        firstAppearanceArc: 'Jaya',
+      ),
+
+      // Warlords
+      Character(
+        id: 'mihawk',
+        name: 'Dracule Mihawk',
+        role: 'Warlord / Swordsman',
+        affiliation: 'Former Seven Warlords',
+        bounty: 3590000000,
+        firstAppearanceArc: 'Baratie',
+      ),
+      Character(
+        id: 'crocodile',
+        name: 'Crocodile',
+        role: 'Former Warlord',
+        affiliation: 'Baroque Works',
+        bounty: 1965000000,
+        devilFruit: 'Suna Suna no Mi',
+        firstAppearanceArc: 'Alabasta',
+      ),
+      Character(
+        id: 'doflamingo',
+        name: 'Donquixote Doflamingo',
+        role: 'Former Warlord / King',
+        affiliation: 'Donquixote Pirates',
+        bounty: 340000000,
+        devilFruit: 'Ito Ito no Mi',
+        firstAppearanceArc: 'Jaya',
+      ),
+      Character(
+        id: 'hancock',
+        name: 'Boa Hancock',
+        role: 'Empress / Former Warlord',
+        affiliation: 'Kuja Pirates',
+        bounty: 1659000000,
+        devilFruit: 'Mero Mero no Mi',
+        firstAppearanceArc: 'Amazon Lily',
+      ),
+      Character(
+        id: 'law',
+        name: 'Trafalgar D. Water Law',
+        role: 'Captain / Former Warlord',
+        affiliation: 'Heart Pirates',
+        bounty: 3000000000,
+        devilFruit: 'Ope Ope no Mi',
+        firstAppearanceArc: 'Sabaody Archipelago',
+      ),
+
+      // Marines
+      Character(
+        id: 'akainu',
+        name: 'Sakazuki (Akainu)',
+        role: 'Fleet Admiral',
+        affiliation: 'Marines',
+        devilFruit: 'Magu Magu no Mi',
+        firstAppearanceArc: 'Jaya',
+      ),
+      Character(
+        id: 'aokiji',
+        name: 'Kuzan (Aokiji)',
+        role: 'Former Admiral',
+        affiliation: 'Former Marines / Blackbeard Pirates',
+        devilFruit: 'Hie Hie no Mi',
+        firstAppearanceArc: 'Long Ring Long Land',
+      ),
+      Character(
+        id: 'kizaru',
+        name: 'Borsalino (Kizaru)',
+        role: 'Admiral',
+        affiliation: 'Marines',
+        devilFruit: 'Pika Pika no Mi',
+        firstAppearanceArc: 'Sabaody Archipelago',
+      ),
+      Character(
+        id: 'fujitora',
+        name: 'Issho (Fujitora)',
+        role: 'Admiral',
+        affiliation: 'Marines',
+        devilFruit: 'Zushi Zushi no Mi',
+        firstAppearanceArc: 'Dressrosa',
+      ),
+      Character(
+        id: 'garp',
+        name: 'Monkey D. Garp',
+        role: 'Vice Admiral',
+        affiliation: 'Marines',
+        firstAppearanceArc: 'Water 7',
+      ),
+      Character(
+        id: 'smoker',
+        name: 'Smoker',
+        role: 'Vice Admiral',
+        affiliation: 'Marines',
+        devilFruit: 'Moku Moku no Mi',
+        firstAppearanceArc: 'Loguetown',
+      ),
+
+      // Revolutionary Army
+      Character(
+        id: 'dragon',
+        name: 'Monkey D. Dragon',
+        role: 'Supreme Commander',
+        affiliation: 'Revolutionary Army',
+        firstAppearanceArc: 'Loguetown',
+      ),
+      Character(
+        id: 'sabo',
+        name: 'Sabo',
+        role: 'Chief of Staff',
+        affiliation: 'Revolutionary Army',
+        devilFruit: 'Mera Mera no Mi',
+        firstAppearanceArc: 'Dressrosa',
+      ),
+
+      // Key Allies
       Character(
         id: 'ace',
         name: 'Portgas D. Ace',
@@ -123,25 +258,158 @@ class CharactersRepository {
         affiliation: 'Whitebeard Pirates',
         bounty: 550000000,
         devilFruit: 'Mera Mera no Mi',
-        firstAppearanceArc: 'Drum / Alabasta',
+        firstAppearanceArc: 'Alabasta',
       ),
       Character(
-        id: 'smoker',
-        name: 'Smoker',
-        role: 'Marine Officer',
-        affiliation: 'Marines',
-        bounty: null,
-        devilFruit: 'Moku Moku no Mi',
-        firstAppearanceArc: 'Loguetown',
+        id: 'vivi',
+        name: 'Nefertari Vivi',
+        role: 'Princess',
+        affiliation: 'Alabasta Kingdom',
+        firstAppearanceArc: 'Reverse Mountain',
       ),
       Character(
-        id: 'mihawk',
-        name: 'Dracule Mihawk',
-        role: 'Warlord / Swordsman',
-        affiliation: 'Former Seven Warlords',
-        bounty: null,
-        devilFruit: null,
-        firstAppearanceArc: 'Baratie',
+        id: 'yamato',
+        name: 'Yamato',
+        role: 'Ally / Guardian',
+        affiliation: 'Independent / Wano',
+        devilFruit: 'Inu Inu no Mi, Model: Okuchi no Makami',
+        firstAppearanceArc: 'Wano',
+      ),
+      Character(
+        id: 'carrot',
+        name: 'Carrot',
+        role: 'Mink / Musketeer',
+        affiliation: 'Mokomo Dukedom',
+        firstAppearanceArc: 'Zou',
+      ),
+
+      // Antagonists
+      Character(
+        id: 'arlong',
+        name: 'Arlong',
+        role: 'Captain',
+        affiliation: 'Arlong Pirates',
+        bounty: 20000000,
+        firstAppearanceArc: 'Arlong Park',
+      ),
+      Character(
+        id: 'enel',
+        name: 'Enel',
+        role: 'God',
+        affiliation: 'Skypiea',
+        bounty: 500000000,
+        devilFruit: 'Goro Goro no Mi',
+        firstAppearanceArc: 'Skypiea',
+      ),
+      Character(
+        id: 'lucci',
+        name: 'Rob Lucci',
+        role: 'CP0 Agent',
+        affiliation: 'Cipher Pol',
+        devilFruit: 'Neko Neko no Mi, Model: Leopard',
+        firstAppearanceArc: 'Water 7',
+      ),
+      Character(
+        id: 'moria',
+        name: 'Gecko Moria',
+        role: 'Former Warlord / Captain',
+        affiliation: 'Thriller Bark Pirates',
+        bounty: 320000000,
+        devilFruit: 'Kage Kage no Mi',
+        firstAppearanceArc: 'Thriller Bark',
+      ),
+      Character(
+        id: 'hody',
+        name: 'Hody Jones',
+        role: 'Captain',
+        affiliation: 'New Fish-Man Pirates',
+        firstAppearanceArc: 'Fishman Island',
+      ),
+      Character(
+        id: 'caesar',
+        name: 'Caesar Clown',
+        role: 'Scientist',
+        affiliation: 'Independent / Doflamingo ally',
+        devilFruit: 'Gasu Gasu no Mi',
+        firstAppearanceArc: 'Punk Hazard',
+      ),
+      Character(
+        id: 'katakuri',
+        name: 'Charlotte Katakuri',
+        role: 'Sweet Commander',
+        affiliation: 'Big Mom Pirates',
+        bounty: 1057000000,
+        devilFruit: 'Mochi Mochi no Mi',
+        firstAppearanceArc: 'Whole Cake Island',
+      ),
+      Character(
+        id: 'king',
+        name: 'King',
+        role: 'All-Star',
+        affiliation: 'Beasts Pirates',
+        bounty: 1390000000,
+        devilFruit: 'Ryu Ryu no Mi, Model: Pteranodon',
+        firstAppearanceArc: 'Wano',
+      ),
+      Character(
+        id: 'queen',
+        name: 'Queen',
+        role: 'All-Star',
+        affiliation: 'Beasts Pirates',
+        bounty: 1320000000,
+        devilFruit: 'Ryu Ryu no Mi, Model: Brachiosaurus',
+        firstAppearanceArc: 'Wano',
+      ),
+
+      // New World / Recent
+      Character(
+        id: 'vegapunk',
+        name: 'Dr. Vegapunk',
+        role: 'Scientist',
+        affiliation: 'Marines / Independent',
+        firstAppearanceArc: 'Egghead',
+      ),
+      Character(
+        id: 'bonney',
+        name: 'Jewelry Bonney',
+        role: 'Captain',
+        affiliation: 'Bonney Pirates',
+        bounty: 320000000,
+        devilFruit: 'Toshi Toshi no Mi',
+        firstAppearanceArc: 'Sabaody Archipelago',
+      ),
+      Character(
+        id: 'kuma',
+        name: 'Bartholomew Kuma',
+        role: 'Former Warlord / Revolutionary',
+        affiliation: 'Revolutionary Army',
+        devilFruit: 'Nikyu Nikyu no Mi',
+        firstAppearanceArc: 'Thriller Bark',
+      ),
+      Character(
+        id: 'loki',
+        name: 'Loki',
+        role: 'Prince',
+        affiliation: 'Elbaf',
+        firstAppearanceArc: 'Elbaf',
+      ),
+
+      // Giants
+      Character(
+        id: 'dorry',
+        name: 'Dorry',
+        role: 'Warrior',
+        affiliation: 'Giant Warrior Pirates',
+        bounty: 100000000,
+        firstAppearanceArc: 'Little Garden',
+      ),
+      Character(
+        id: 'brogy',
+        name: 'Brogy',
+        role: 'Warrior',
+        affiliation: 'Giant Warrior Pirates',
+        bounty: 100000000,
+        firstAppearanceArc: 'Little Garden',
       ),
     ];
   }

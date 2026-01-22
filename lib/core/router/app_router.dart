@@ -16,6 +16,8 @@ import 'package:one_piece_companion/features/encyclopedia/presentation/devil_fru
 import 'package:one_piece_companion/features/encyclopedia/presentation/locations_screen.dart';
 import 'package:one_piece_companion/features/encyclopedia/presentation/location_detail_screen.dart';
 import 'package:one_piece_companion/features/settings/presentation/settings_screen.dart';
+import 'package:one_piece_companion/features/search/presentation/search_screen.dart';
+
 
 
 class RootShell extends StatefulWidget {
@@ -66,6 +68,11 @@ final GoRouter appRouter = GoRouter(
       name: 'root',
       builder: (context, state) => const RootShell(),
       routes: [
+        GoRoute(
+          path: 'search',
+          name: 'search',
+          builder: (context, state) => const SearchScreen(),
+        ),
         GoRoute(
           path: 'settings',
           name: 'settings',

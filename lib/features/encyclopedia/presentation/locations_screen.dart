@@ -43,6 +43,13 @@ class LocationsScreen extends ConsumerWidget {
                     .state = 'Grand Line',
               ),
               _SeaChip(
+                label: 'Paradise',
+                isSelected: seaFilter == 'Paradise',
+                onTap: () => ref
+                    .read(locationSeaFilterProvider.notifier)
+                    .state = 'Paradise',
+              ),
+              _SeaChip(
                 label: 'New World',
                 isSelected: seaFilter == 'New World',
                 onTap: () => ref
@@ -61,8 +68,17 @@ class LocationsScreen extends ConsumerWidget {
               final loc = locations[index];
               return Card(
                 child: ListTile(
+                  leading: Icon(
+                    _getSeaIcon(loc.sea),
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
                   title: Text(loc.name),
-                  subtitle: Text('${loc.sea} · ${loc.keyArcs}'),
+                  subtitle: Text(
+                    '${loc.sea} · First appeared: ${_formatArcId(loc.firstAppearanceArc)}',
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  trailing: const Icon(Icons.chevron_right),
                   onTap: () {
                     context.push('/location/${loc.id}');
                   },
@@ -73,6 +89,24 @@ class LocationsScreen extends ConsumerWidget {
         ),
       ],
     );
+  }
+
+  IconData _getSeaIcon(String sea) {
+    if (sea.contains('East Blue')) return Icons.wb_sunny;
+    if (sea.contains('Paradise')) return Icons.sailing;
+    if (sea.contains('New World')) return Icons.explore;
+    if (sea.contains('Sky Island')) return Icons.cloud;
+    if (sea.contains('Calm Belt')) return Icons.waves;
+    if (sea.contains('Underwater')) return Icons.water;
+    return Icons.place;
+  }
+
+  String _formatArcId(String arcId) {
+    // Convert snake_case to Title Case
+    return arcId
+        .split('_')
+        .map((word) => word[0].toUpperCase() + word.substring(1))
+        .join(' ');
   }
 }
 

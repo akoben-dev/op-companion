@@ -13,7 +13,7 @@ final allLocationsProvider = Provider<List<Location>>((ref) {
   return repo.getAllLocations();
 });
 
-// 'All', 'East Blue', 'Grand Line', 'New World', etc.
+// 'All', 'East Blue', 'Paradise', 'Grand Line', 'New World', etc.
 final locationSeaFilterProvider = StateProvider<String>((ref) => 'All');
 
 final filteredLocationsProvider = Provider<List<Location>>((ref) {
@@ -22,7 +22,22 @@ final filteredLocationsProvider = Provider<List<Location>>((ref) {
 
   if (seaFilter == 'All') return all;
 
-  return all.where((loc) => loc.sea == seaFilter).toList();
+  // Smart filtering: check if the location's sea contains the filter term
+  return all.where((loc) {
+    final sea = loc.sea.toLowerCase();
+    final filter = seaFilter.toLowerCase();
+
+    // Direct match or contains check
+    if (sea == filter) return true;
+    if (sea.contains(filter)) return true;
+
+    // Special cases
+    if (filter == 'grand line' && (sea.contains('paradise') || sea.contains('grand line'))) {
+      return true;
+    }
+
+    return false;
+  }).toList();
 });
 
 final locationByIdProvider =
